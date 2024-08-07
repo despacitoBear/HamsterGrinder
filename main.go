@@ -24,7 +24,6 @@ func main() {
 	unixTime := time.Now().Unix()
 	maxTaps := MaxTaps(resp.ClickerUser.Level)
 
-	//смысла в проверке нет
 	if maxTaps == 0 {
 		maxTaps = 1000
 	}
@@ -58,7 +57,6 @@ func main() {
 		return
 	}
 
-	//мб надо было сохранить просто в ClickerUser?
 	err = json.Unmarshal(body, &resp)
 	if err != nil {
 		ErrorsToDocker(err, "Error unmarshalling JSON: ")
